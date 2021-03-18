@@ -1,10 +1,10 @@
-package com.smarte.project;
+package com.smarteinc.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmpdemoApplicationTests {
+class EmployeeDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
