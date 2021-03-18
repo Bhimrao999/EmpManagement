@@ -1,10 +1,13 @@
-package com.example.demo.model;
+package com.smarte.project.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity(name = "Employee")
-public class Employee {
+public class Employee implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "empId")
@@ -22,9 +25,16 @@ public class Employee {
     private Date JOIdate;
     @Column(name = "status")
     private boolean status;
-    @Column(name = "userName")
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "deptId"), name = "deptId")
+
+    //    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(foreignKey = @ForeignKey(name = "Department"), name = "deptId")
+//    private int deptId;
+//    @ManyToOne()
+//    @JoinColumn(name = "deptId")
+//    @Column(name="deptId")
+//    private int deptId;
+    @ManyToOne
+    @JoinColumn(name = "deptId")
     private Department department;
 
     public String getUserName() {
@@ -91,5 +101,31 @@ public class Employee {
         this.empId = empId;
     }
 
-    
+    public Employee() {
+    }
+
+    public Employee(int empId, String userName, String password, int age, int CTC, Date JOIdate, boolean status, Department department) {
+        this.empId = empId;
+        this.userName = userName;
+        this.password = password;
+        this.age = age;
+        this.CTC = CTC;
+        this.JOIdate = JOIdate;
+        this.status = status;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", CTC=" + CTC +
+                ", JOIdate=" + JOIdate +
+                ", status=" + status +
+                ", department=" + department +
+                '}';
+    }
 }

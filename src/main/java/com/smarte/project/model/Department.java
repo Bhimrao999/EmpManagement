@@ -1,13 +1,11 @@
-package com.example.demo.model;
+package com.smarte.project.model;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity(name = "Department")
+@Entity(name = "Dept")
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "deptId")
     private int deptId;
     @Column(name = "deptName")
     private String deptName;
@@ -38,5 +36,21 @@ public class Department {
         this.region = region;
     }
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "deptId=" + deptId +
+                ", deptName='" + deptName + '\'' +
+                ", region='" + region + '\'' +
+                '}';
+    }
 
+    public Department() {
+    }
+
+    public Department(int deptId, String deptName, String region) {
+        this.deptId = deptId;
+        this.deptName = deptName;
+        this.region = region;
+    }
 }
