@@ -1,10 +1,11 @@
 package com.smarteinc.project.model;
 
+import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
-import lombok.ToString;
 
 @Entity
 @Data
@@ -34,6 +35,7 @@ public class Employee implements Serializable {
     @ManyToOne
     @JoinColumn(name = "dept_id")
     private Department department;
+
 
 
 }
