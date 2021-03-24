@@ -30,7 +30,7 @@ public class NonDFunctions {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("\n\n-------Employee Details ------------");
-            System.out.println("  1.find employee in department");
+            System.out.println("  1.find employees in department");
             System.out.println("  2.find employees below a given age having CTC greater than 2 lakh.");
             System.out.println("  3. Exit the program...\n");
             System.out.println("Choose one:");
